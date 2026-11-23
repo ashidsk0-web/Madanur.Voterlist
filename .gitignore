@@ -1,0 +1,38 @@
+# Build and publish outputs
+bin/
+obj/
+dist/
+node_modules/
+plesk_deploy/
+plesk_final/
+*.zip
+
+# Logs
+*.log
+logs/
+
+# IDE & Editor files
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Database, large PDFs, and media (exceeds GitHub file limit)
+*.db
+*.db-shm
+*.db-wal
+*.pdf
+**/data/database/
+**/data/source/
+**/data/photos/
+**/data/private/
+**/public/voter-photos/
+**/voter-photos/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store

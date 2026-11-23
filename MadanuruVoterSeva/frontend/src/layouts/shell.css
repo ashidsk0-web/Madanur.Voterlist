@@ -1,0 +1,101 @@
+.desk-shell { min-height: 100dvh; display: grid; grid-template-columns: 238px minmax(0, 1fr); background: #f5f8fa; }
+.desk-sidebar-desktop { position: sticky; top: 0; height: 100dvh; min-width: 0; }
+.desk-sidebar, .desk-header { font-family: "Segoe UI Variable", "Segoe UI", "Nirmala UI", sans-serif; }
+.desk-sidebar {
+  display: flex; flex-direction: column; min-height: 100%; height: 100%; overflow-y: auto;
+  padding: 15px 13px; color: #eaf3fa; background: radial-gradient(ellipse at 100% 0%, #1b4351 0, transparent 52%), #102139;
+}
+.desk-brand {
+  display: flex; align-items: center; gap: 10px; padding: 8px 6px 18px;
+  margin-bottom: 13px; border-bottom: 1px solid #ffffff24; color: inherit; text-decoration: none;
+}
+.desk-brand-icon {
+  display: block; flex: 0 0 40px; width: 40px; height: 40px;
+}
+.desk-brand strong, .desk-roll-summary strong { display: block; font-size: .97rem; letter-spacing: -.025em; font-weight: 800; }
+.desk-brand small, .desk-roll-summary small { display: block; color: #afc9d6; font-size: .75rem; margin-top: 2px; }
+.desk-nav { display: grid; gap: 5px; }
+.desk-nav a {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px;
+  padding: 10px; min-height: 44px; border-radius: 9px; border: 1px solid transparent;
+  color: #c8d9e3; text-decoration: none; font-size: .9rem; font-weight: 700;
+}
+.desk-nav a:hover, .desk-ward:hover { background: #ffffff15; color: #fff; }
+.desk-nav a[aria-current="page"] { background: #244c58; color: #fff; border-color: #36736f; }
+.desk-nav a[aria-current="page"] .desk-nav-icon { color: #b3ebde; }
+.desk-nav .desk-nav-icon { font-size: 19px; }
+.desk-nav .desk-nav-chevron { font-size: 17px; opacity: .65; }
+.desk-sidebar a:focus-visible { outline: 2px solid #9be6d6; outline-offset: 2px; }
+.desk-wards { border-top: 1px solid #ffffff24; padding-top: 14px; margin-top: 15px; margin-bottom: 15px; }
+.desk-wards h2 { margin: 0 0 9px; font-size: .83rem; font-weight: 750; color: #d7e6ee; }
+.desk-ward-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+.desk-ward {
+  padding: 6px 3px; color: #c8d9e3; border: 1px solid #ffffff22; border-radius: 7px;
+  text-align: center; text-decoration: none; font-size: .8rem; font-weight: 750;
+}
+.desk-ward[aria-current="true"] { background: #244c58; color: #fff; border-color: #8ee0d2; }
+.desk-roll-summary {
+  display: flex; align-items: center; gap: 9px; padding: 10px;
+  margin-top: auto; border: 1px solid #ffffff21; border-radius: 10px; background: #ffffff0c;
+}
+.desk-roll-summary strong { font-size: .82rem; }
+.desk-roll-dot { width: 9px; height: 9px; flex-shrink: 0; border-radius: 50%; background: #a7b5c4; }
+.desk-roll-dot[data-active="true"] { background: #72dbbf; }
+.desk-main { min-width: 0; }
+.desk-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; position: sticky; top: 0;
+  min-height: 52px; padding: 6px clamp(12px, 2vw, 24px); border-bottom: 1px solid #dce5ed;
+  background: #fff; z-index: 20;
+}
+.desk-header-context { display: flex; gap: 11px; align-items: center; min-width: 0; }
+.desk-header-context strong { font-weight: 800; white-space: nowrap; }
+.desk-header-context > span { border-left: 1px solid #dce5ed; padding-left: 11px; color: #52677d; font-size: .82rem; }
+.desk-header .MuiButton-root { font-weight: 750; white-space: nowrap; }
+.desk-header .desk-menu-button { display: none; }
+.desk-content { padding: clamp(12px, 2vw, 22px); }
+.desk-drawer { width: min(280px, 91vw); }
+@media (max-width: 899px) {
+  .desk-shell { grid-template-columns: minmax(0, 1fr); }
+  .desk-sidebar-desktop { display: none; }
+  .desk-header .desk-menu-button { display: inline-flex; }
+}
+@media (max-width: 530px) {
+  .desk-header-context { gap: 5px; }
+  .desk-header-context > span { display: none; }
+}
+
+@media (max-width: 760px) {
+  .desk-card-table.MuiTable-root, .desk-card-table .MuiTableBody-root { display: block; }
+  .desk-card-table .MuiTableHead-root {
+    position: absolute; width: 1px; height: 1px; padding: 0;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+  .desk-card-table .MuiTableBody-root > .MuiTableRow-root {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px 12px; padding: 12px; border-bottom: 1px solid #dce5ed;
+  }
+  .desk-card-table .MuiTableRow-root:last-child { border-bottom: 0; }
+  .desk-card-table .MuiTableCell-body {
+    display: block; min-width: 0; padding: 0; border: 0; font-size: .95rem; overflow-wrap: anywhere;
+  }
+  .desk-card-table .MuiTableCell-body[data-label]::before {
+    content: attr(data-label); display: block; margin-bottom: 2px;
+    color: #4b6279; font-size: .8rem; font-weight: 650;
+  }
+  .desk-card-table .MuiTableCell-body.desk-card-title {
+    grid-column: 1 / -1; grid-row: 1; font-size: 1.06rem; font-weight: 800;
+  }
+  .desk-card-table .desk-card-title::before { display: none; }
+  .desk-card-table .MuiChip-root { max-width: 100%; height: auto; min-height: 20px; }
+  .desk-card-table .MuiChip-label { white-space: normal; }
+}
+@media (max-width: 600px) {
+  .desk-content .MuiButton-root:not(.MuiPaginationItem-root),
+  .desk-header .MuiButton-root, .desk-header .desk-menu-button,
+  .desk-login .MuiButton-root { min-height: 44px; }
+  .desk-login .MuiInputBase-input, .desk-content .MuiInputBase-input { font-size: 16px; }
+  .desk-content .MuiInputBase-root { min-height: 44px; }
+  .desk-pagination .MuiPaginationItem-root { min-height: 40px; min-width: 36px; margin-inline: 1px; }
+  .desk-pagination .MuiPagination-ul { justify-content: center; }
+  .desk-drawer .desk-ward { min-height: 44px; display: grid; place-items: center; }
+}

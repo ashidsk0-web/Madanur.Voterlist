@@ -1,0 +1,11 @@
+{
+  "name": "madanuru-voter-seva-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root runner for Madanuru Voter Seva",
+  "scripts": {
+    "dev": "npm --prefix MadanuruVoterSeva/frontend run dev",
+    "build": "npm --prefix MadanuruVoterSeva/frontend run build",
+    "preview": "npm --prefix MadanuruVoterSeva/frontend run preview"
+  }
+}

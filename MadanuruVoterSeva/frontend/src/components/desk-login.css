@@ -1,0 +1,77 @@
+.desk-login {
+  --signin-ink: #13253b;
+  --signin-muted: #4f6479;
+  --signin-teal: #096861;
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  padding: clamp(14px, 5vw, 56px);
+  background: radial-gradient(ellipse at 25% 15%, #e3f2ef 0, transparent 54%), #edf3f8;
+  font-family: "Segoe UI Variable", "Segoe UI", "Nirmala UI", sans-serif;
+}
+.desk-login-card {
+  display: grid;
+  grid-template-columns: minmax(245px, .76fr) minmax(0, 1fr);
+  width: min(100%, 790px);
+  overflow: hidden;
+  border: 1px solid #dbe6ec;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 22px 52px #152d4a1c, 0 4px 14px #152d4a0c;
+}
+.desk-login-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: clamp(24px, 5vw, 44px);
+  background: radial-gradient(ellipse at 100% 0%, #246666, transparent 74%), #10273c;
+  color: #fff;
+}
+.desk-login-brand img { display: block; flex: none; }
+.desk-login-brand p { margin: 0; }
+.desk-login-location { color: #c3e6e2; font-size: .86rem; font-weight: 700; }
+.desk-login-brand .desk-login-name {
+  margin-top: 5px;
+  font-size: clamp(27px, 4vw, 41px);
+  line-height: 1.07;
+  font-weight: 850;
+  letter-spacing: -.04em;
+}
+.desk-login-brand .desk-login-telugu {
+  margin-top: 9px;
+  color: #c3e6e2;
+  font: 700 .99rem/1.4 "Nirmala UI", sans-serif;
+}
+.desk-login-panel { min-width: 0; padding: clamp(25px, 5vw, 48px); }
+.desk-login-panel h1 { margin: 0; color: var(--signin-ink); font-size: clamp(26px, 4vw, 35px); font-weight: 850; line-height: 1.12; letter-spacing: -.035em; }
+.desk-login-panel > p { margin: 7px 0 22px; color: var(--signin-muted); font-size: 1rem; line-height: 1.5; }
+.desk-login-form { display: grid; gap: 14px; }
+.desk-login-form .MuiInputBase-root { min-height: 52px; border-radius: 10px; color: var(--signin-ink); }
+.desk-login-form .MuiInputBase-input { font-size: 16px; }
+.desk-login-form .MuiInputLabel-root { color: var(--signin-muted); font-weight: 650; }
+.desk-login-form .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline { border-color: var(--signin-teal); }
+.desk-login-form .MuiInputAdornment-root { color: #526c80; }
+.desk-login-form .MuiIconButton-root { min-height: 44px; min-width: 44px; color: #3f5d73; }
+.desk-login-form .MuiButton-contained {
+  min-height: 49px; margin-top: 2px; border-radius: 10px; background: var(--signin-teal);
+  font-size: 1rem; font-weight: 800; box-shadow: none;
+}
+.desk-login-form .MuiButton-contained:hover { background: #07554f; box-shadow: none; }
+.desk-login-form .MuiButton-contained.Mui-disabled { background: #e2eaee; color: #506479; }
+.desk-login-form :is(button):focus-visible { outline: 2px solid var(--signin-teal); outline-offset: 3px; }
+.desk-login-form .MuiAlert-root { align-items: center; border-radius: 9px; }
+@media (max-width: 650px) {
+  .desk-login-card { grid-template-columns: 1fr; max-width: 460px; border-radius: 16px; }
+  .desk-login-brand { flex-direction: row; justify-content: flex-start; align-items: center; gap: 12px; padding: 18px; }
+  .desk-login-brand img { width: 50px; height: 50px; }
+  .desk-login-name-break { display: none; }
+  .desk-login-brand .desk-login-name { margin-top: 3px; font-size: clamp(21px, 5.6vw, 28px); }
+  .desk-login-brand .desk-login-telugu { margin-top: 4px; }
+  .desk-login-panel { padding: 22px 18px; }
+  .desk-login-panel > p { margin-bottom: 18px; }
+}
+@media (max-height: 520px) {
+  .desk-login { place-items: start center; }
+}

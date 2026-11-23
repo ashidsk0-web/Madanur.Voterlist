@@ -1,0 +1,142 @@
+.lookup {
+  --lookup-ink: #111e30;
+  --lookup-muted: #4c627a;
+  --lookup-line: #dbe5ee;
+  --lookup-teal: #096b64;
+  --lookup-font: "Segoe UI Variable", "Segoe UI", "Nirmala UI", sans-serif;
+  max-width: 1260px;
+  margin-inline: auto;
+  color: var(--lookup-ink);
+  font-family: var(--lookup-font);
+}
+.lookup-heading { display: flex; align-items: center; gap: 13px; margin: 0 0 16px; }
+.lookup-heading-icon {
+  display: grid; place-items: center; flex: 0 0 46px; height: 46px; border-radius: 13px;
+  background: #dff2ee; color: #09605a; border: 1px solid #c9e8e1;
+}
+.lookup-heading h1 { margin: 0; font-size: clamp(24px, 3vw, 34px); font-weight: 850; line-height: 1.12; letter-spacing: -.04em; }
+.lookup-heading p { margin: 3px 0 0; color: var(--lookup-muted); font: 700 .89rem/1.4 "Nirmala UI", var(--lookup-font); }
+.lookup-grid { display: grid; gap: 14px; align-items: start; min-width: 0; }
+.lookup-grid-split { grid-template-columns: minmax(235px, .42fr) minmax(0, 1fr); }
+.lookup .lookup-panel {
+  min-width: 0; padding: 16px; border: 1px solid var(--lookup-line);
+  border-radius: 16px; background: #fff; box-shadow: 0 5px 18px #1329480b;
+}
+.lookup .lookup-search { margin-bottom: 14px; overflow: visible; }
+.lookup-form { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; }
+.lookup-tabs {
+  display: flex; gap: 3px; padding: 4px; border-radius: 11px;
+  border: 1px solid #e0e9f0; background: #edf3f8;
+}
+.lookup-tabs button {
+  display: flex; align-items: center; justify-content: center; gap: 6px; flex: 1;
+  min-height: 39px; padding: 6px 11px; border: 0; border-radius: 7px;
+  color: #465d75; background: transparent; cursor: pointer; white-space: nowrap;
+  font: 750 .85rem/1.2 var(--lookup-font);
+}
+.lookup-tabs button[aria-pressed="true"] { background: #152c44; color: #fff; box-shadow: 0 2px 5px #162d4730; }
+.lookup-tabs button:disabled { cursor: wait; }
+.lookup-tabs button:focus-visible, .lookup-match:focus-visible, .lookup-source-text summary:focus-visible { outline: 2px solid var(--lookup-teal); outline-offset: 2px; }
+.lookup-fields { min-width: 0; }
+.lookup-name-fields { display: grid; grid-template-columns: minmax(0, 1fr) minmax(100px, .35fr); align-items: center; gap: 10px; }
+.lookup-form .MuiInputBase-root { min-height: 44px; border-radius: 9px; font-weight: 650; }
+.lookup-form .MuiInputLabel-root { font-weight: 650; }
+.lookup-actions { display: flex; align-items: center; gap: 5px; }
+.lookup-actions .MuiButton-root { min-height: 42px; font-weight: 750; border-radius: 9px; white-space: nowrap; }
+.lookup-actions .MuiButton-contained { background: var(--lookup-teal); padding-inline: 15px; }
+.lookup-actions .MuiButton-contained:hover { background: #075650; }
+.lookup-actions .MuiButton-contained.Mui-disabled { background: #e5ecf1; color: #64778c; }
+.lookup .lookup-notice { margin-bottom: 14px; }
+.lookup-suggestion { gap: 10px; border-bottom: 1px solid #edf2f6; }
+.lookup-suggestion:last-child { border-bottom: 0; }
+.lookup-suggestion strong { font: 750 .98rem/1.4 "Nirmala UI", var(--lookup-font); }
+.lookup-suggestion-photo {
+  display: grid; place-items: center; flex: 0 0 36px; width: 36px; height: 45px;
+  border-radius: 7px; object-fit: cover; background: #e7f0f5; color: #385673;
+}
+.lookup-match {
+  display: flex; width: 100%; justify-content: space-between; align-items: center;
+  gap: 10px; padding: 9px 11px; border: 1px solid var(--lookup-line); border-radius: 9px;
+  background: #fff; cursor: pointer; color: #18344c; text-align: left; font: inherit;
+}
+.lookup-match .lookup-match-name { min-width: 0; overflow-wrap: anywhere; text-align: left; }
+.lookup-match strong { font-weight: 750; }
+.lookup-match small { display: block; color: var(--lookup-muted); }
+.lookup-match span:last-child { flex-shrink: 0; text-align: right; font-size: .81rem; }
+.lookup-match:hover, .lookup-match[aria-pressed="true"] { border-color: #78b9ae; background: #edf8f5; }
+.lookup .lookup-record { padding: 0; }
+.lookup-empty {
+  min-height: 122px; display: grid; grid-template-columns: auto minmax(0, auto); gap: 2px 12px;
+  justify-content: center; align-content: center; align-items: center; padding: 18px;
+}
+.lookup-empty svg { grid-row: span 2; font-size: 29px; color: var(--lookup-teal); }
+.lookup-empty h2, .lookup-empty p { margin: 0; }
+.lookup-empty h2 { font-size: 1rem; font-weight: 800; }
+.lookup-empty p { font-size: .86rem; color: var(--lookup-muted); }
+.lookup-identity {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 18px;
+  color: #fff; padding: clamp(14px, 2vw, 21px);
+  background: radial-gradient(ellipse at 95% 8%, #1b6264 0, transparent 63%), linear-gradient(125deg, #12253d, #163b4b 100%);
+}
+.lookup-photo {
+  width: clamp(70px, 9vw, 104px); aspect-ratio: 3 / 4; object-fit: contain;
+  border-radius: 9px; border: 2px solid #ffffff40; background: #eaf1f8;
+}
+.lookup-photo-status { display: grid; place-items: center; text-align: center; padding: 5px; color: #385673; font-size: .77rem; }
+.lookup-person { min-width: 0; overflow-wrap: anywhere; }
+.lookup-record-label { margin: 0; color: #b2dcd7; font: 700 .82rem/1.4 var(--lookup-font); }
+.lookup-person h2 { margin: 2px 0 2px; color: #fff; font: 750 clamp(22px, 3vw, 35px)/1.28 "Nirmala UI", var(--lookup-font); }
+.lookup .lookup-relative { color: #d9e8ee; font-size: .88rem; }
+.lookup-refs {
+  display: flex; flex-wrap: wrap; gap: 5px 18px; margin: 9px 0 0;
+  padding-top: 8px; border-top: 1px solid #ffffff30;
+}
+.lookup-refs div { display: flex; align-items: baseline; gap: 5px; }
+.lookup-refs dt { font-size: .75rem; color: #c7dce5; font-weight: 650; }
+.lookup-refs dd { margin: 0; color: #fff; font-size: .98rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.lookup-record-body { padding: 13px clamp(14px, 2vw, 21px) 15px; }
+.lookup-details {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 14px; margin: 0 0 11px;
+}
+.lookup-details > div { padding: 7px 0; border-bottom: 1px solid #e7eef3; }
+.lookup-details dt { color: var(--lookup-muted); font-size: .77rem; font-weight: 650; }
+.lookup-details dd { margin: 2px 0 0; font-size: .96rem; font-weight: 800; overflow-wrap: anywhere; }
+.lookup-record-body .MuiAlert-root { align-items: center; padding-block: 1px; border-radius: 9px; }
+.lookup-record-body .MuiAlert-message { padding-block: 6px; }
+.lookup-source-text { font-size: .88rem; color: var(--lookup-muted); }
+.lookup-source-text summary { cursor: pointer; font-weight: 700; width: fit-content; }
+.lookup-source-text pre { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; }
+.lookup-source-action .MuiButton-root { font-weight: 750; border-radius: 8px; }
+@media (max-width: 1220px) {
+  .lookup-form { grid-template-columns: minmax(0, 1fr) auto; }
+  .lookup-tabs { grid-column: 1 / -1; justify-self: start; }
+}
+@media (max-width: 920px) {
+  .lookup-grid-split { grid-template-columns: 1fr; }
+  .lookup-grid-split .lookup-record { grid-row: 1; }
+  .lookup-details { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .lookup-form { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .lookup-tabs { justify-self: stretch; }
+  .lookup .lookup-panel { border-radius: 12px; }
+  .lookup .lookup-search { padding: 12px; }
+  .lookup-identity { gap: 12px; }
+  .lookup-details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .lookup-record { scroll-margin-top: 66px; }
+  .lookup-tabs button { min-height: 44px; }
+  .lookup-actions .MuiButton-contained { flex: 1; }
+  .lookup-actions .MuiButton-text { min-width: 68px; }
+  .lookup-actions { gap: 8px; }
+  .lookup-match { min-height: 48px; }
+  .lookup-record .lookup-source-action .MuiButton-root { width: 100%; }
+  .lookup .lookup-source-text summary { min-height: 42px; align-content: center; }
+  .lookup-suggestion-list.MuiAutocomplete-listbox { max-height: min(45dvh, 260px); }
+}
+@media (max-width: 360px) {
+  .lookup-name-fields { grid-template-columns: 1fr; }
+}
